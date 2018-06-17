@@ -3,7 +3,7 @@
 with lib;
 
 let
-  package = pkgs.callPackage ./package.nix {};
+  package = pkgs.callPackage ./package.nix { nodejs = pkgs.nodejs-6_x; };
   cfg = config.services.matrix-appservice-irc;
   boolToStr = b: if b then "true" else "false";
   mkRoom = r: ''{
